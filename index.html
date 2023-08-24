@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .container {
+            width: 100%;
+        }
+
+        header {
+            padding: 50px 5%;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-list {
+            display: flex;
+            align-items: center;
+            list-style-type: none;
+            width: 30%;
+            justify-content: space-between;
+        }
+
+        .nav-list li a {
+            font-family: 'Roboto';
+            font-weight: 500;
+            font-size: 15px;
+            color: #111111;
+            text-decoration: none;
+        }
+
+        .nav-list li a.pricing-page {
+            color: #ED1C24;
+        }
+
+        .nav-btns {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-btns .signup {
+             border: none;
+             outline: none;
+             background-color: transparent;
+             font-family: 'Roboto';
+             font-weight: 500;
+             font-size: 15px;
+             color: #212529;
+             margin-right: 16px;
+        }
+
+        .nav-btns .login {
+             border: none;
+             outline: none;
+             background-color: #ED1C24;
+             border-radius: 5px;
+             text-align: center;
+             width: 90px;
+             height: 40px;
+             font-family: 'Roboto';
+             font-weight: 600;
+             color: #fff;
+             font-size: 16px;
+        }
+
+        main {
+            margin-top: 60px;
+        }
+
+        main h1 {
+            text-align: center;
+            font-family: 'Roboto';
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 60px;
+            width: 60%;
+            margin: 0 auto;
+        }
+
+        main h2 {
+            text-align: center;
+            font-family: 'Inter';
+            font-weight: 700;
+            font-size: 28px;
+            margin-top: 40px;
+        }
+        
+        .billing {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 26px;
+        }
+
+        .billing span {
+            font-family: 'Roboto';
+            font-weight: 500;
+            font-size: 20px;
+            color: #111111;
+        }
+
+        .billing-switch {
+            width: 54px;
+            height: 30px;
+            border-radius: 50px;
+            background-color: #ED1C24;
+            margin: 0 30px;
+            padding: 3px;
+        }
+
+        .billing-switch button {
+            width: 24px;
+            height: 24px;
+            background-color: #fff;
+            border-radius: 50%;
+            border: none;
+            outline: none;
+        }
+
+        .plan-cards {
+            margin: 30px auto 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .plan-cards .silver, .plan-cards .gold {
+            width: 325px;
+            height: 490px;
+            border-radius: 16px;
+            box-shadow: 0px 18px 16px -4px #0000001A;
+            margin: 0 20px;
+            padding: 30px;
+        }
+
+        .plan-cards .silver {
+            background-color: #fff;
+            box-shadow: 6px 12px 16px -4px #0000001A;
+        }
+
+        .silver p {
+            font-family: 'Roboto';
+            font-weight: 500;
+            font-size: 20px;
+            color: #ED1C24;
+            text-align: center;
+            margin: 10px 0 16px;
+        }
+
+        .silver h3 {
+            font-family: 'Roboto';
+            font-weight: 700;
+            font-size: 32px;
+            color: #111111;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .silver button {
+            font-family: 'Roboto';
+            font-weight: 600;
+            color: #fff;
+            text-align: center;
+            margin: 0 auto 20px;
+            border: none;
+            outline: none;
+            width: 261px;
+            height: 46px;
+            border-radius: 50px;
+            background-color: #121217;
+            font-size: 16px;
+        }
+
+        .silver ul {
+            list-style-type: none;
+            margin-top: 10px;
+        }
+
+        .silver li, .gold li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 18px;
+        }
+
+        .silver img, .gold img {
+            margin-right: 10px;
+        }
+
+        .silver li span {
+            font-family: 'Roboto';
+            font-size: 14px;
+            color: #222222;
+        }
+
+        .plan-cards .gold {
+            background-color: #1E1E1E;
+        }
+
+        .gold p {
+            font-family: 'Roboto';
+            font-weight: 500;
+            font-size: 20px;
+            color: #53B175;
+            text-align: center;
+            margin: 10px 0 16px;
+        }
+
+        .gold h3 {
+            font-family: 'Roboto';
+            font-weight: 700;
+            font-size: 32px;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .gold button {
+            font-family: 'Roboto';
+            font-weight: 600;
+            color: #111;
+            text-align: center;
+            margin: 0 auto 20px;
+            border: none;
+            outline: none;
+            width: 261px;
+            height: 46px;
+            border-radius: 50px;
+            background-color: #fff;
+            font-size: 16px;
+        }
+
+        .gold ul {
+            list-style-type: none;
+            margin-top: 10px;
+        }
+
+        .gold li span {
+            font-family: 'Roboto';
+            font-size: 14px;
+            color: #fff;
+        }
+
+        .emergency {
+            background-color: #F6F6F6;
+            padding: 60px;
+        }
+
+        .emergency h3 {
+            font-family: 'Inter';
+            font-weight: 700;
+            font-size: 28px;
+            text-align: center;
+            color: #111111;
+            margin-bottom: 16px;
+        }
+
+        .emergency p {
+            font-family: 'Roboto';
+            font-weight: 500;
+            text-align: center;
+            color: #393D46;
+            margin-bottom: 50px;
+        }
+
+        .plans {
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .basic, .total, .comprehensive {
+            width: 30%;
+            height: 869px;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0px 12px 16px -4px #0000001A;
+        }
+
+        .basic, .comprehensive {
+            background-color: #fff;
+        }
+
+        .basic p, .comprehensive p {
+            font-family: 'Roboto';
+            font-weight: 500;
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 16px;
+            color: #ED1C24;
+        }
+
+        .basic .plan-price, .total .plan-price, .comprehensive .plan-price {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 16px;
+        }
+
+        .basic h3, .comprehensive h3 {
+            font-family: 'Roboto';
+            font-weight: 700;
+            font-size: 32px;
+            color: #111;
+        }
+
+        .total h3 {
+            font-family: 'Roboto';
+            font-weight: 700;
+            font-size: 32px;
+            color: #fff;
+        }
+
+        .basic .plan-price p, .comprehensive .plan-price p {
+            font-family: 'Inter';
+            font-size: 13px;
+            color: #737A91;
+        }
+
+        .total .plan-price p {
+            font-family: 'Inter';
+            font-size: 13px;
+            color: #E3E5ED;
+        }
+
+        .basic .plan-price span, .comprehensive .plan-price span {
+            display: inline;
+            margin-top: 0;
+        }
+
+        .total p {
+            font-family: 'Roboto';
+            font-weight: 500;
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 16px;
+            color: #53B175;
+        }
+
+        .basic button, .comprehensive button  {
+            width: 100%;
+            height: 46px;
+            border-radius: 50px;
+            border: none;
+            outline: none;
+            background-color: #121217;
+            font-family: 'Roboto';
+            font-weight: 600;
+            font-size: 16px;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 24px;
+        }
+
+        .total button  {
+            width: 100%;
+            height: 46px;
+            border-radius: 50px;
+            border: none;
+            outline: none;
+            background-color: #fff;
+            font-family: 'Roboto';
+            font-weight: 600;
+            font-size: 16px;
+            text-align: center;
+            color: #111;
+            margin-bottom: 24px;
+        }
+
+        .total {
+            background-color: #1E1E1E;
+        }
+
+        .basic ul, .total ul, .comprehensive ul {
+            list-style-type: none;
+        }
+
+        .basic li, .total li, .comprehensive li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 14px;
+        }
+
+        .basic li img, .total li img, .comprehensive li img {
+            margin-right: 10px;
+        }
+
+        .basic li span, .comprehensive li span {
+            font-family: 'Roboto';
+            font-size: 14px;
+            line-height: 20px;
+            color: #222222;
+        }
+
+        .total li span {
+            font-family: 'Roboto';
+            font-size: 14px;
+            line-height: 20px;
+            color: #fff;
+        }
+
+        .view-all {
+            display: flex;
+            align-items: center;
+        }
+
+        .view-all button {
+            border: none;
+            outline: none;
+            background-color: transparent;
+            margin-bottom: 0;
+            width: 70px;
+            font-family: 'Roboto';
+            font-weight: 600;
+            font-size: 14px;
+            color: #53B175;
+            text-decoration: underline;
+        }
+
+        .request {
+            padding: 60px 7.5%;
+            display: flex;
+            align-items: center;
+        }
+
+        .form {
+            margin-right: 8%;
+        }
+
+        .form h3 {
+            font-family: 'Inter';
+            font-weight: 700;
+            font-size: 28px;
+            color: #111;
+            margin-bottom: 6px;
+        }
+
+        .form p {
+            font-family: 'Roboto';
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 25px;
+            color: #393D46;
+            margin-bottom: 30px;
+        }
+
+        form label {
+            display: block;
+            font-family: 'Roboto';
+            font-weight: 500;
+            font-size: 15px;
+            color: #393D46;
+            margin-bottom: 6px;
+        }
+
+        form input {
+            width: 95%;
+            height: 60px;
+            border-radius: 5px;
+            border: 1px solid #E7E7E7;
+            background-color: #FAFAFA;
+            padding: 16px;
+            margin-bottom: 32px;
+            font-family: 'Roboto';
+            font-size: 14px;
+        }
+
+        .form input::placeholder {
+            color: #979797;
+        }
+
+        .form select {
+            width: 95%;
+            height: 60px;
+            border-radius: 5px;
+            border: 1px solid #E7E7E7;
+            background-color: #FAFAFA;
+            padding: 16px;
+            margin-bottom: 50px;
+            font-family: 'Roboto';
+            font-size: 14px;
+            color: #979797;
+        }
+
+        .form button {
+            width: 165px;
+            height: 45px;
+            border-radius: 5px;
+            background-color: #ED1C24;
+            border: none;
+            outline: none;
+            font-family: 'Roboto';
+            font-weight: 600;
+            font-size: 16px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .newsletter {
+            width: 92%;
+            height: 175px;
+            margin: 120px auto 55px;
+            background-color: #000000CF;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 100px;
+        }
+
+        .newsletter .text p {
+            font-family: 'Roboto';
+            font-weight: 500;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .newsletter .text h3 {
+            font-family: 'Roboto';
+            font-weight: 700;
+            font-size: 36px;
+            color: #fff;
+        }
+
+        .newsletter .inputs {
+            display: flex;
+            align-items: center;
+            width: 493px;
+            height: 46px;
+        }
+
+        .newsletter .inputs input {
+            width: 363px;
+            height: 100%;
+            background-color: #fff;
+            border: none;
+            outline: none;
+            padding: 20px;
+            font-family: 'Noto Sans';
+            font-size: 15px;
+        }
+
+        .newsletter .inputs input::placeholder {
+            color: #737A91;
+        }
+
+        .newsletter .inputs button {
+            width: 130px;
+            height: 100%;
+            background-color: #ED1C24;
+            border: none;
+            outline: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-family: 'Roboto';
+            font-size: 16px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        footer {
+            width: 100%;
+        }
+
+        .footer-main {
+            width: 100%;
+            background-color: #111111;
+            display: flex;
+            justify-content: space-between;
+            padding: 80px 50px 60px;
+        }
+
+        .footer-content {
+            width: 70%;
+        }
+
+        .footer-content .footer-logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-text {
+            font-family: 'Roboto';
+            font-size: 14px;
+            line-height: 25.2px;
+            color: #fff;
+            width: 80%;
+            margin-bottom: 20px;
+        }
+
+        .email, .call {
+            display: flex;
+            margin-bottom: 16px;
+        }
+
+        .email .contact-img, .call .contact-img {
+            margin-right: 12px;
+        }
+
+        .contact p {
+            font-family: 'Roboto';
+            font-size: 14px;
+            line-height: 21px;
+            color: #fff;
+        }
+
+        .footer-socials {
+            width: 15%;
+            margin-top: 50px;
+        }
+
+        .footer-socials h6 {
+            font-family: 'Roboto';
+            font-weight: 600;
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 25px;
+        }
+
+        .footer-socials .socials {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 80%;
+        }
+
+        .footer-bottom {
+            width: 100%;
+            height: 43px;
+            background-color: #840E13;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-bottom {
+            font-family: 'Roboto';
+            font-size: 14px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <img src="./images/logo.png" alt="">
+                <ul class="nav-list">
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">About Us</a>
+                    </li>
+                    <li>
+                        <a href="#" class="pricing-page">Pricing</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact Us</a>
+                    </li>
+                </ul>
+                <div class="nav-btns">
+                    <button class="signup">Sign Up</button>
+                    <button class="login">Login</button>
+                </div>
+            </nav>
+            <main>
+                <h1>
+                    Choose the best plan for you, without the fuss and guesswork.
+                </h1>
+                <h2>TELEMEDICINE SERVICE</h2>
+                <div class="billing">
+                    <span>Monthly Billing</span>
+                    <div class="billing-switch">
+                        <button class="switch-btn"></button>
+                    </div>
+                    <span>Annual Billing</span>
+                </div>
+                <div class="plan-cards">
+                    <div class="silver">
+                        <p>Silver Plan</p>
+                        <h3>₦80,000</h3>
+                        <button>Choose Plan</button>
+                        <ul>
+                            <li>
+                                <img src="./images/red-tick-circle.png" alt="">
+                                <span>Toll-free call</span>
+                            </li>
+                            <li>
+                                <img src="./images/red-tick-circle.png" alt="">
+                                <span>Audio/Video call</span>
+                            </li>
+                            <li>
+                                <img src="./images/red-tick-circle.png" alt="">
+                                <span>Talk to a Specialist</span>
+                            </li>
+                            <li>
+                                <img src="./images/red-tick-circle.png" alt="">
+                                <span>Employee Assistant Counselling</span>
+                            </li>
+                            <li>
+                                <img src="./images/red-tick-circle.png" alt="">
+                                <span>Talk to a GP</span>
+                            </li>
+                            <li>
+                                <img src="./images/red-tick-circle.png" alt="">
+                                <span>Get a Medication</span>
+                            </li>
+                            <li>
+                                <img src="./images/red-tick-circle.png" alt="">
+                                <span>General Counselling</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="gold">
+                        <p>Gold Plan</p>
+                        <h3>₦100,000</h3>
+                        <button>Choose Plan</button>
+                        <ul>
+                            <li>
+                                <img src="./images/green-tick-circle.png" alt="">
+                                <span>Toll-free call</span>
+                            </li>
+                            <li>
+                                <img src="./images/green-tick-circle.png" alt="">
+                                <span>Audio/Video call</span>
+                            </li>
+                            <li>
+                                <img src="./images/green-tick-circle.png" alt="">
+                                <span>Talk to a Specialist</span>
+                            </li>
+                            <li>
+                                <img src="./images/green-tick-circle.png" alt="">
+                                <span>Employee Assistant Counselling</span>
+                            </li>
+                            <li>
+                                <img src="./images/green-tick-circle.png" alt="">
+                                <span>Talk to a GP</span>
+                            </li>
+                            <li>
+                                <img src="./images/green-tick-circle.png" alt="">
+                                <span>Get a Medication</span>
+                            </li>
+                            <li>
+                                <img src="./images/green-tick-circle.png" alt="">
+                                <span>General Counselling</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </main>
+        </header>
+        <section class="emergency">
+            <h3>EMERGENCY RESPONSE SERVICE</h3>
+            <p>Fast response to medical emergencies – lifesaving prehospital care at an affordable rate</p>
+            <div class="plans">
+                <div class="basic">
+                    <p>Basic Medical Plan</p>
+                    <div class="plan-price">
+                        <h3>₦7,000</h3>
+                        <p>/annum</p>
+                    </div>
+                    <button>Choose Plan</button>
+                    <ul>
+                        <li>
+                            <img src="./images/red-tick-circle.png" alt="">
+                            <span>24/7 access to Emergency Response</span>
+                        </li>
+                        <li>
+                            <img src="./images/red-tick-circle.png" alt="">
+                            <span>Fast onsite treatment from Motorcycle Medic</span>
+                        </li>
+                        <li>
+                            <img src="./images/red-tick-circle.png" alt="">
+                            <span>Emergency ambulance transportation to hospital (up to 1 year)</span>
+                        </li>
+                        <li>
+                            <img src="./images/red-tick-circle.png" alt="">
+                            <span>Referral to verified emergency-ready hospitals</span>
+                        </li>
+                        <li>
+                            <img src="./images/red-tick-circle.png" alt="">
+                            <span>Access to Treat now, Pay later healthcare credit facility for all hospital bills (prequalification required)</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="total">
+                    <p>Total Emergency Response Plan</p>
+                    <div class="plan-price">
+                        <h3>₦240,000</h3>
+                        <p>/annum</p>
+                    </div>
+                    <button>Choose Plan</button>
+                    <ul>
+                        <li>
+                            <img src="./images/green-tick-circle.png" alt="">
+                            <span>Real-time, location-based emergency alerts</span>
+                        </li>
+                        <li>
+                            <img src="./images/green-tick-circle.png" alt="">
+                            <span>24/7 access to Emergency Response</span>
+                        </li>
+                        <li>
+                            <img src="./images/green-tick-circle.png" alt="">
+                            <span>Fast onsite treatment from Armed Security, Motorcycle Medic and/or Fire Services as required</span>
+                        </li>
+                        <li>
+                            <img src="./images/green-tick-circle.png" alt="">
+                            <span>Emergency ambulance transportation to hospital </span>
+                        </li>
+                        <li>
+                            <img src="./images/green-tick-circle.png" alt="">
+                            <span>Referral to verified emergency-ready hospitals</span>
+                        </li>
+                        <li>
+                            <img src="./images/green-tick-circle.png" alt="">
+                            <span>Hospital bills covered – ZERO out of pocket expenses</span>
+                        </li>
+                        <li>
+                            <img src="./images/green-tick-circle.png" alt="">
+                            <span>Annual medical screening</span>
+                        </li>
+                        <li>
+                            <img src="./images/green-tick-circle.png" alt="">
+                            <span>Access to Treat Now, Pay Later healthcare credit facility for any hospital bills exceeding the covered limit (prequalification required)</span>
+                        </li>
+                        <li>
+                            <img src="./images/green-tick-circle.png" alt="">
+                            <span>Cash payment to policyholder in case of temporary or permanent disability</span>
+                        </li>
+                        <li>
+                            <img src="./images/green-tick-circle.png" alt="">
+                            <span>Cash payment to beneficiaries and burial expenses covered in case of death</span>
+                        </li>
+                        <li>
+                            <img src="./images/green-tick-circle.png" alt="">
+                            <div class="view-all">
+                                <span>Coverage includes:</span>
+                                <button>View all</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="comprehensive">
+                    <p>Comprehensive Medical Emergency Plan</p>
+                    <div class="plan-price">
+                        <h3>₦20,000</h3>
+                        <p>/annum</p>
+                    </div>
+                    <button>Choose Plan</button>
+                    <ul>
+                        <li>
+                            <img src="./images/red-tick-circle.png" alt="">
+                            <span>24/7 access to Emergency Response</span>
+                        </li>
+                        <li>
+                            <img src="./images/red-tick-circle.png" alt="">
+                            <span>Fast onsite treatment from Motorcycle Medic</span>
+                        </li>
+                        <li>
+                            <img src="./images/red-tick-circle.png" alt="">
+                            <span>Emergency ambulance transportation to hospital (up to 2 year)</span>
+                        </li>
+                        <li>
+                            <img src="./images/red-tick-circle.png" alt="">
+                            <span>Referral to verified emergency-ready hospitals</span>
+                        </li>
+                        <li>
+                            <img src="./images/red-tick-circle.png" alt="">
+                            <span>N350,000 of hospital bills covered - Zero out of pocket expenses</span>
+                        </li>
+                        <li>
+                            <img src="./images/red-tick-circle.png" alt="">
+                            <span>Annual medical screening</span>
+                        </li>
+                        <li>
+                            <img src="./images/red-tick-circle.png" alt="">
+                            <span>Access to Treat Now, Pay Later healthcare credit facility for any hospital bills exceeding the covered limit (prequalification required)</span>
+                        </li>
+                        <li>
+                            <img src="./images/red-tick-circle.png" alt="">
+                            <div class="view-all">
+                                <span>Coverage includes:</span>
+                                <button>View all</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="request">
+            <div class="form">
+                <h3>MAKE A REQUEST</h3>
+                <p>As a company HR, you can easily make a request to a preferred plan for your organization by filling out the form below.</p>
+                <form>
+                    <div>
+                        <label for="name">Full Name</label>
+                        <input type="text" name="" id="" placeholder="Enter full name">
+                    </div>
+                    <div>
+                        <label for="company name">Company Name</label>
+                        <input type="text" name="" id="" placeholder="Enter company name">
+                    </div>
+                    <div>
+                        <label for="company name">Email Address</label>
+                        <input type="email" name="" id="" placeholder="Enter email address">
+                    </div>
+                    <div>
+                        <label for="company name">Phone Number</label>
+                        <input type="number" name="" id="" placeholder="Phone Number">
+                    </div>
+                    <div>
+                        <label for="company name">Plan</label>
+                        <select name="" id="">
+                            <option value="">Select plan</option>
+                        </select>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            <div class="image">
+                <img src="./images/Frame 34333.png" alt="">
+            </div>
+        </section>
+        <section class="newsletter">
+            <div class="text">
+                <p>Learn from the experts in the medical Field</p>
+                <h3>Subscribe to our newsletter</h3>
+            </div>
+            <div class="inputs">
+                <input type="text" placeholder="Email address">
+                <button>Subscribe</button>
+            </div>
+        </section>
+        <footer>
+            <div class="footer-main">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <img src="./images/footer-logo.png" alt="">
+                    </div>
+                    <p class="footer-text">
+                        Medbury Medical Services is the first dedicated Occupational Health, Industrial Hygiene and Medical Solutions Company in Nigeria. Our goal is to improve the health, well being and productivity of individuals within the workplace.
+                    </p>
+                    <div class="contact">
+                        <div class="email">
+                            <div class="contact-img">
+                                <img src="./images/email.png" alt="">
+                            </div>
+                            <p>
+                                info@medburymedicals.com.ng <br>
+                                sales@medburymedicals.com 
+                            </p>
+                        </div>
+                        <div class="call">
+                            <div class="contact-img">
+                                <img src="./images/callcalling.png" alt="">
+                            </div>
+                            <p>
+                                09070366256 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-socials">
+                    <h6>CONNECT</h6>
+                    <div class="socials">
+                        <img src="./images/Facebook.png" alt="">
+                        <img src="./images/Instagram.png" alt="">
+                        <img src="./images/Twitter.png" alt="">
+                        <img src="./images/Linkedin.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright © 2023. Medbury Medical Services</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
