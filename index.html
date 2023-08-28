@@ -101,7 +101,7 @@
             font-family: 'Inter';
             font-weight: 700;
             font-size: 28px;
-            margin-top: 40px;
+            margin-top: 48px;
         }
         
         .billing {
@@ -137,7 +137,7 @@
         }
 
         .plan-cards {
-            margin: 30px auto 0;
+            margin: 40px auto 0;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -483,6 +483,7 @@
             margin-bottom: 32px;
             font-family: 'Roboto';
             font-size: 14px;
+            outline: none;
         }
 
         .form input::placeholder {
@@ -495,11 +496,12 @@
             border-radius: 5px;
             border: 1px solid #E7E7E7;
             background-color: #FAFAFA;
-            padding: 16px;
+            padding: 0 25px 0 16px ;
             margin-bottom: 50px;
             font-family: 'Roboto';
             font-size: 14px;
             color: #979797;
+            outline: none;
         }
 
         .form button {
@@ -520,12 +522,16 @@
             width: 92%;
             height: 175px;
             margin: 120px auto 55px;
-            background-color: #000000CF;
             border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 0 100px;
+            position: relative;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.81), rgba(0, 0, 0, 0.81)), url('./images/Frame\ 20.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         .newsletter .text p {
@@ -659,6 +665,74 @@
             font-size: 14px;
             color: #fff;
         }
+
+        .modal-container {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal {
+            width: 324px;
+            height: 545px;
+            background-color: #fff;
+            border-radius: 16px;
+            margin: 40px auto;
+            padding: 20px 30px;
+            box-shadow: 0px 8px 32px 0px #00000073;
+        }
+
+        .modal .close {
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            cursor: pointer;
+        }
+
+        .modal-body {
+            margin-top: 12px;
+        }
+
+        .coverage {
+            display: flex;
+            align-items: center;
+        }
+
+        .coverage img {
+            margin-right: 12px;
+        }
+
+        .coverage p {
+            font-family: 'Inter';
+            font-size: 12px;
+            color: #222222;
+        }
+
+        ul.coverage-list {
+            list-style-type: none;
+            margin-top: 16px;
+            margin-left: 26px;
+        }
+
+        ul.coverage-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-family: 'Inter';
+            font-size: 12px;
+            line-height: 20px;
+        }
+
+        ul.coverage-list li img {
+            margin-right: 16px;
+        }
+
     </style>
 </head>
 <body>
@@ -857,7 +931,7 @@
                             <img src="./images/green-tick-circle.png" alt="">
                             <div class="view-all">
                                 <span>Coverage includes:</span>
-                                <button>View all</button>
+                                <button class="view">View all</button>
                             </div>
                         </li>
                     </ul>
@@ -902,7 +976,7 @@
                             <img src="./images/red-tick-circle.png" alt="">
                             <div class="view-all">
                                 <span>Coverage includes:</span>
-                                <button>View all</button>
+                                <button class="view">View all</button>
                             </div>
                         </li>
                     </ul>
@@ -928,7 +1002,7 @@
                     </div>
                     <div>
                         <label for="company name">Phone Number</label>
-                        <input type="number" name="" id="" placeholder="Phone Number">
+                        <input type="text" name="" id="" placeholder="Phone Number">
                     </div>
                     <div>
                         <label for="company name">Plan</label>
@@ -996,6 +1070,102 @@
                 <p>Copyright © 2023. Medbury Medical Services</p>
             </div>
         </footer>
+        <div class="modal-container">
+            <div class="modal">
+                <div class="close">
+                    <img src="./images//cross.png" alt="">
+                </div>
+                <div class="modal-body">
+                    <div class="coverage">
+                        <img src="./images/red-tick-circle.png" alt="">
+                        <p>Coverage includes:</p>
+                    </div>
+                    <ul class="coverage-list">
+                        <li>
+                            <img src="./images/Ellipse 184.png" alt="">
+                            Emergency stabilization
+                        </li>
+                        <li>
+                            <img src="./images/Ellipse 184.png" alt="">
+                            General and Specialist Consultations
+                        </li>
+                        <li>
+                            <img src="./images/Ellipse 184.png" alt="">
+                            Prescribed Medications
+                        </li>
+                        <li>
+                            <img src="./images/Ellipse 184.png" alt="">
+                            Basic and Comprehensive Laboratory Investigations
+                        </li>
+                        <li>
+                            <img src="./images/Ellipse 184.png" alt="">
+                            Basic and Comprehensive Radiological Investigations
+                        </li>
+                        <li>
+                            <img src="./images/Ellipse 184.png" alt="">
+                            Admission in a semi-private ward
+                        </li>
+                        <li>
+                            <img src="./images/Ellipse 184.png" alt="">
+                            Hospital to Hospital transfers
+                        </li>
+                        <li>
+                            <img src="./images/Ellipse 184.png" alt="">
+                            Intensive Care Unit
+                        </li>
+                        <li>
+                            <img src="./images/Ellipse 184.png" alt="">
+                            Surgeries
+                        </li>
+                        <li>
+                            <img src="./images/Ellipse 184.png" alt="">
+                            Physiotherapy sessions
+                        </li>
+                        <li>
+                            <img src="./images/Ellipse 184.png" alt="">
+                            Blood transfusion services
+                        </li>
+                        <li>
+                            <img src="./images/Ellipse 184.png" alt="">
+                            P.O.P
+                        </li>
+                        <li>
+                            <img src="./images/Ellipse 184.png" alt="">
+                            Burn treatment etc.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
+    <script>
+        const view = document.querySelectorAll('.view');
+        for (let i = 0; i < view.length; i++) { 
+            view[i].addEventListener('click', openModal);
+        }
+
+        const modal = document.querySelector('.modal-container');
+        const close = document.querySelector('.close');
+
+        
+
+        close.addEventListener('click', closeModal);
+
+        window.addEventListener('click', outsideClick);
+
+        function openModal() {
+            modal.style.display = 'block';
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+        function outsideClick(e) {
+            if (e.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
